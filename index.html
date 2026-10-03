@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Link OS Publishing is the creative publishing home of Sora Shigotaku, built around music, language learning, and connection across cultures." />
-  <meta name="theme-color" content="#08111f" />
-  <title>Link OS Publishing | Music, Languages, Connection</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Link OS Publishing is the independent music and language-learning home of Sora Shigotaku.">
+  <meta name="theme-color" content="#07101c">
+  <title>Link OS Publishing | Music and Languages</title>
   <style>
     :root{
       --bg:#07101c;
@@ -14,13 +13,13 @@
       --panel:rgba(255,255,255,.075);
       --panel2:rgba(255,255,255,.12);
       --text:#f7f8fc;
-      --muted:#b7c0d4;
-      --line:rgba(255,255,255,.13);
-      --blue:#78a7ff;
-      --violet:#ba8cff;
-      --pink:#ff93d1;
-      --gold:#ffd36e;
-      --shadow:0 24px 80px rgba(0,0,0,.34);
+      --muted:#b9c3d7;
+      --line:rgba(255,255,255,.14);
+      --blue:#76a7ff;
+      --violet:#b98cff;
+      --pink:#ff95d3;
+      --gold:#ffd36f;
+      --shadow:0 24px 80px rgba(0,0,0,.36);
       --radius:28px;
       --max:1180px;
     }
@@ -30,19 +29,18 @@
     body{
       margin:0;
       color:var(--text);
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       line-height:1.6;
       background:
-        radial-gradient(circle at 10% 6%, rgba(120,167,255,.18), transparent 26%),
-        radial-gradient(circle at 90% 12%, rgba(186,140,255,.16), transparent 24%),
-        radial-gradient(circle at 50% 45%, rgba(255,211,110,.06), transparent 28%),
-        linear-gradient(180deg,#07101c 0%,#0a1425 46%,#07101c 100%);
+        radial-gradient(circle at 12% 5%,rgba(118,167,255,.16),transparent 28%),
+        radial-gradient(circle at 88% 8%,rgba(185,140,255,.14),transparent 25%),
+        linear-gradient(180deg,#07101c 0%,#0a1425 48%,#07101c 100%);
       min-height:100vh;
       overflow-x:hidden;
     }
 
     a{color:inherit}
-    img{max-width:100%;display:block}
+    img{display:block;max-width:100%}
     .wrap{width:min(calc(100% - 32px),var(--max));margin:0 auto}
 
     .nav{
@@ -50,7 +48,7 @@
       top:0;
       z-index:50;
       border-bottom:1px solid var(--line);
-      background:rgba(7,16,28,.76);
+      background:rgba(7,16,28,.78);
       backdrop-filter:blur(18px);
     }
 
@@ -59,14 +57,15 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
+      gap:22px;
     }
 
     .brand{
       text-decoration:none;
       font-weight:900;
-      letter-spacing:-.02em;
+      letter-spacing:-.025em;
       white-space:nowrap;
+      font-size:1.05rem;
     }
 
     .brand .os{color:var(--blue)}
@@ -75,7 +74,6 @@
     .nav-links{
       display:flex;
       gap:18px;
-      align-items:center;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
@@ -84,62 +82,85 @@
       color:var(--muted);
       text-decoration:none;
       font-size:.94rem;
-      font-weight:650;
+      font-weight:700;
     }
 
     .nav-links a:hover{color:var(--text)}
 
-    .hero{padding:96px 0 70px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:34px;
-      align-items:center;
+    .hero{
+      position:relative;
+      min-height:720px;
+      display:flex;
+      align-items:flex-end;
+      isolation:isolate;
+      background:
+        linear-gradient(180deg,rgba(4,9,18,.14) 0%,rgba(4,9,18,.46) 50%,rgba(4,9,18,.95) 100%),
+        url('hero-web.jpg') center center/cover no-repeat;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(circle at 18% 22%,rgba(255,149,211,.16),transparent 24%),
+        radial-gradient(circle at 82% 18%,rgba(255,211,111,.13),transparent 22%);
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      width:100%;
+      padding:150px 0 72px;
     }
 
     .kicker{
       display:inline-flex;
       align-items:center;
       gap:9px;
-      border:1px solid var(--line);
-      background:var(--panel);
-      border-radius:999px;
       padding:8px 13px;
-      color:#dce5f4;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(7,16,28,.68);
+      backdrop-filter:blur(12px);
+      color:#e8edf7;
       text-transform:uppercase;
+      letter-spacing:.11em;
       font-size:.78rem;
-      letter-spacing:.12em;
-      font-weight:800;
+      font-weight:900;
     }
 
-    .dot{
+    .kicker .dot{
       width:8px;
       height:8px;
       border-radius:50%;
       background:linear-gradient(135deg,var(--gold),var(--pink));
-      box-shadow:0 0 18px rgba(255,211,110,.8);
+      box-shadow:0 0 18px rgba(255,211,111,.8);
     }
 
     h1{
-      margin:24px 0 20px;
-      font-size:clamp(3.4rem,8vw,7.5rem);
+      max-width:900px;
+      margin:24px 0 18px;
+      font-size:clamp(3.6rem,9vw,7.8rem);
       line-height:.88;
       letter-spacing:-.065em;
-      max-width:900px;
+      text-shadow:0 10px 35px rgba(0,0,0,.5);
     }
 
     .gradient{
-      background:linear-gradient(90deg,#fff1bd 0%,var(--gold) 23%,var(--pink) 55%,var(--violet) 78%,var(--blue) 100%);
+      background:linear-gradient(90deg,#fff4c8 0%,var(--gold) 25%,var(--pink) 54%,var(--violet) 76%,var(--blue) 100%);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
     }
 
-    .hero-copy{
-      max-width:720px;
-      color:var(--muted);
-      font-size:clamp(1.05rem,2vw,1.28rem);
+    .hero p{
+      max-width:760px;
       margin:0 0 28px;
+      color:#d7deeb;
+      font-size:clamp(1.08rem,2vw,1.34rem);
+      text-shadow:0 4px 18px rgba(0,0,0,.5);
     }
 
     .actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -151,7 +172,7 @@
       padding:0 20px;
       border-radius:14px;
       text-decoration:none;
-      font-weight:800;
+      font-weight:850;
       border:1px solid var(--line);
       transition:.18s ease;
     }
@@ -160,105 +181,12 @@
       color:#07101c;
       border-color:transparent;
       background:linear-gradient(135deg,var(--gold),var(--pink) 55%,var(--violet));
-      box-shadow:0 10px 34px rgba(255,147,209,.16);
+      box-shadow:0 10px 32px rgba(255,149,211,.2);
     }
-    .btn-secondary{background:var(--panel)}
-
-    .world-card{
-      position:relative;
-      min-height:520px;
-      border:1px solid var(--line);
-      border-radius:34px;
-      background:
-        radial-gradient(circle at 50% 45%,rgba(255,211,110,.19),transparent 23%),
-        radial-gradient(circle at 50% 50%,rgba(120,167,255,.17),transparent 42%),
-        linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.04));
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      isolation:isolate;
-    }
-
-    .world-card:before,
-    .world-card:after{
-      content:"";
-      position:absolute;
-      left:50%;
-      top:50%;
-      border:1px solid rgba(255,211,110,.24);
-      border-radius:50%;
-      transform:translate(-50%,-50%) rotate(-10deg);
-      z-index:-1;
-    }
-    .world-card:before{width:78%;height:34%}
-    .world-card:after{width:92%;height:48%;transform:translate(-50%,-50%) rotate(13deg)}
-
-    .globe{
-      width:230px;
-      height:230px;
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      padding:22px;
-      border:1px solid rgba(255,255,255,.18);
-      background:
-        radial-gradient(circle at 35% 28%,rgba(255,255,255,.22),transparent 12%),
-        radial-gradient(circle at 32% 45%,rgba(89,193,157,.34),transparent 18%),
-        radial-gradient(circle at 68% 40%,rgba(89,193,157,.28),transparent 20%),
-        radial-gradient(circle at 60% 70%,rgba(89,193,157,.22),transparent 17%),
-        radial-gradient(circle at 50% 50%,#1c5b99,#08284f 74%);
-      box-shadow:inset -30px -35px 65px rgba(0,0,0,.35),0 0 55px rgba(120,167,255,.24);
-    }
-
-    .globe strong{
-      font-size:1.35rem;
-      line-height:1.05;
-      letter-spacing:-.03em;
-    }
-    .globe small{display:block;margin-top:8px;color:#d6dfef}
-
-    .note{
-      position:absolute;
-      color:var(--gold);
-      font-size:2rem;
-      text-shadow:0 0 18px rgba(255,211,110,.6);
-      opacity:.92;
-    }
-    .n1{left:11%;top:25%;transform:rotate(-12deg)}
-    .n2{right:12%;top:27%;transform:rotate(10deg)}
-    .n3{left:14%;bottom:24%;transform:rotate(8deg)}
-    .n4{right:14%;bottom:22%;transform:rotate(-8deg)}
-
-    .lang{
-      position:absolute;
-      padding:8px 12px;
-      border:1px solid var(--line);
-      background:rgba(7,16,28,.8);
-      border-radius:999px;
-      font-size:.78rem;
-      font-weight:800;
-      box-shadow:0 10px 24px rgba(0,0,0,.22);
-    }
-    .l1{left:8%;top:10%}.l2{left:38%;top:8%}.l3{right:7%;top:13%}
-    .l4{left:4%;top:45%}.l5{right:4%;top:47%}
-    .l6{left:8%;bottom:11%}.l7{left:39%;bottom:8%}.l8{right:8%;bottom:12%}
-
-    .world-caption{
-      position:absolute;
-      left:50%;
-      bottom:24px;
-      transform:translateX(-50%);
-      width:calc(100% - 48px);
-      text-align:center;
-      color:var(--muted);
-      font-size:.9rem;
-    }
+    .btn-secondary{background:rgba(7,16,28,.68);backdrop-filter:blur(12px)}
 
     section{padding:78px 0}
+
     .section-head{
       display:flex;
       justify-content:space-between;
@@ -266,13 +194,15 @@
       gap:26px;
       margin-bottom:30px;
     }
+
     .section-head h2{
       margin:0;
-      font-size:clamp(2.1rem,4.5vw,4rem);
+      font-size:clamp(2.2rem,4.8vw,4rem);
       line-height:.96;
       letter-spacing:-.045em;
     }
-    .section-head p{margin:0;max-width:650px;color:var(--muted)}
+
+    .section-head p{margin:0;max-width:660px;color:var(--muted)}
 
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{
@@ -280,120 +210,96 @@
       background:var(--panel);
       border-radius:var(--radius);
       padding:28px;
-      min-height:280px;
+      min-height:270px;
       backdrop-filter:blur(14px);
     }
     .card:hover{background:var(--panel2)}
-    .card .eyebrow{color:var(--pink);font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
-    .card h3{font-size:1.65rem;line-height:1.1;margin:12px 0 10px}
+    .eyebrow{color:var(--pink);font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+    .card h3{font-size:1.62rem;line-height:1.1;margin:12px 0 10px}
     .card p{color:var(--muted);margin:0}
 
-    .language-wall{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:24px;
-    }
+    .language-wall{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
     .language-pill{
       border:1px solid var(--line);
       background:rgba(255,255,255,.055);
       border-radius:999px;
       padding:11px 16px;
-      color:#e7ecf6;
-      font-weight:800;
+      color:#e8edf6;
+      font-weight:850;
     }
 
-    .process{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      counter-reset:step;
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.045));
+      padding:32px;
     }
+    .panel h2,.panel h3{margin-top:0;letter-spacing:-.035em}
+    .panel h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1}
+    .panel h3{font-size:1.5rem}
+    .panel p{color:var(--muted)}
+
+    .process{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
     .step{
       position:relative;
       border:1px solid var(--line);
       border-radius:var(--radius);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.045));
+      background:var(--panel);
       padding:30px;
-      min-height:245px;
+      min-height:235px;
       overflow:hidden;
     }
     .step:before{
       counter-increment:step;
       content:"0" counter(step);
       position:absolute;
-      right:22px;
-      top:12px;
+      right:20px;
+      top:10px;
       font-size:4.8rem;
       line-height:1;
       font-weight:900;
-      color:rgba(255,255,255,.055);
-      letter-spacing:-.08em;
+      color:rgba(255,255,255,.05);
     }
     .step h3{font-size:1.55rem;margin:8px 0 10px}
     .step p{color:var(--muted);margin:0}
-    .step .icon{font-size:1.7rem;color:var(--gold)}
+    .icon{font-size:1.7rem;color:var(--gold)}
 
-    .feature-band{
+    .founder{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .feature-copy,.founder-card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:var(--panel);
-      padding:32px;
-    }
-    .feature-copy h2,.founder-card h2{
-      margin:0 0 14px;
-      font-size:clamp(2rem,4vw,3.5rem);
-      line-height:1;
-      letter-spacing:-.04em;
-    }
-    .feature-copy p,.founder-card p{color:var(--muted)}
-
-    .quote{
-      margin-top:22px;
-      padding:18px 20px;
-      border-left:3px solid var(--pink);
-      background:rgba(255,147,209,.055);
-      border-radius:0 16px 16px 0;
-      color:#eef1f8;
-      font-weight:700;
-    }
-
-    .founder-top{
-      display:grid;
-      grid-template-columns:104px 1fr;
-      gap:18px;
+      grid-template-columns:150px 1fr;
+      gap:28px;
       align-items:center;
-      margin-bottom:16px;
-    }
-    .avatar{
-      width:104px;
-      height:104px;
-      border-radius:24px;
-      object-fit:cover;
       border:1px solid var(--line);
-      box-shadow:0 10px 32px rgba(0,0,0,.25);
+      background:var(--panel);
+      border-radius:var(--radius);
+      padding:30px;
     }
-    .founder-meta strong{display:block;font-size:1.45rem}
-    .founder-meta span{color:var(--muted)}
+
+    .avatar{
+      width:150px;
+      height:150px;
+      object-fit:cover;
+      border-radius:28px;
+      border:1px solid var(--line);
+      box-shadow:0 18px 46px rgba(0,0,0,.28);
+    }
+
+    .founder h2{margin:0 0 10px;font-size:clamp(2.1rem,4vw,3.5rem);line-height:1;letter-spacing:-.045em}
+    .founder p{margin:0;color:var(--muted)}
 
     .cta{
       text-align:center;
-      padding:60px 24px;
+      padding:58px 24px;
       border:1px solid var(--line);
       border-radius:34px;
       background:
-        radial-gradient(circle at 20% 20%,rgba(255,211,110,.11),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(186,140,255,.14),transparent 32%),
+        radial-gradient(circle at 20% 20%,rgba(255,211,111,.11),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(185,140,255,.14),transparent 32%),
         rgba(255,255,255,.055);
       box-shadow:var(--shadow);
     }
-    .cta h2{margin:0 0 12px;font-size:clamp(2.4rem,5vw,4.5rem);line-height:.95;letter-spacing:-.05em}
+    .cta h2{margin:0 0 12px;font-size:clamp(2.4rem,5vw,4.4rem);line-height:.95;letter-spacing:-.05em}
     .cta p{max-width:720px;margin:0 auto 26px;color:var(--muted)}
     .cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 
@@ -401,35 +307,30 @@
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px}
 
     @media(max-width:900px){
-      .hero-grid,.feature-band{grid-template-columns:1fr}
-      .grid3,.process{grid-template-columns:1fr}
-      .world-card{min-height:500px}
+      .grid3,.process,.split{grid-template-columns:1fr}
+      .founder{grid-template-columns:1fr}
+      .avatar{width:120px;height:120px}
     }
 
     @media(max-width:680px){
-      .nav-inner{align-items:flex-start;padding:14px 0;gap:14px}
-      .nav-links{gap:8px 12px}
-      .nav-links a{font-size:.82rem}
-      .hero{padding-top:68px}
+      .nav-inner{align-items:flex-start;padding:15px 0}
+      .nav-links{gap:10px 14px}
+      .hero{min-height:650px;background-position:center top}
+      .hero-inner{padding:120px 0 54px}
       .section-head{align-items:flex-start;flex-direction:column}
-      h1{font-size:clamp(3rem,16vw,5.3rem)}
-      .world-card{min-height:430px}
-      .globe{width:190px;height:190px}
-      .lang{font-size:.68rem;padding:7px 9px}
-      .founder-top{grid-template-columns:82px 1fr}
-      .avatar{width:82px;height:82px;border-radius:20px}
+      h1{font-size:clamp(3.2rem,17vw,5.6rem)}
     }
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top">Link <span class="os">OS</span> <span class="pub">Publishing</span>&trade;</a>
+      <a class="brand" href="#top">Link <span class="os">OS</span> <span class="pub">Publishing&trade;</span></a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#music">Music</a>
         <a href="#languages">Languages</a>
-        <a href="#method">Listen + Learn</a>
-        <a href="#about">About</a>
+        <a href="#learn">Learn</a>
+        <a href="#sora">Sora</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -437,39 +338,17 @@
 
   <main id="top">
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="kicker"><span class="dot"></span> Music &bull; Language &bull; Connection</div>
+      <div class="hero-inner">
+        <div class="wrap">
+          <span class="kicker"><span class="dot"></span> Music &bull; Languages &bull; Connection</span>
           <h1>Different languages.<br><span class="gradient">One rhythm.</span></h1>
-          <p class="hero-copy">
-            Link OS Publishing&trade; is the creative publishing home of Sora Shigotaku, built around music, language learning, and the idea that every new word can open another way of hearing the world.
+          <p>
+            Link OS Publishing&trade; is built around music, language learning, creativity, and the idea that every new way of communicating opens another way of seeing the world.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="https://www.youtube.com/@shigotaku?sub_confirmation=1" target="_blank" rel="noopener">Listen on YouTube</a>
-            <a class="btn btn-secondary" href="#languages">Explore the language journey</a>
+            <a class="btn btn-primary" href="https://www.youtube.com/@shigotaku">Listen on YouTube</a>
+            <a class="btn btn-secondary" href="#languages">Explore the languages</a>
           </div>
-        </div>
-
-        <div class="world-card" aria-label="Music and language illustration">
-          <div class="lang l1">Espa&ntilde;ol</div>
-          <div class="lang l2">English</div>
-          <div class="lang l3">Japanese</div>
-          <div class="lang l4">Fran&ccedil;ais</div>
-          <div class="lang l5">Korean</div>
-          <div class="lang l6">Portugu&ecirc;s</div>
-          <div class="lang l7">Mandarin</div>
-          <div class="lang l8">Russian</div>
-          <div class="note n1">&#9835;</div>
-          <div class="note n2">&#9834;</div>
-          <div class="note n3">&#9834;</div>
-          <div class="note n4">&#9835;</div>
-          <div class="globe">
-            <div>
-              <strong>Music connects the world.</strong>
-              <small>One language at a time.</small>
-            </div>
-          </div>
-          <div class="world-caption">Listen. Learn. Sing. Practice. Explore. Stay curious.</div>
         </div>
       </div>
     </section>
@@ -477,35 +356,26 @@
     <section id="music">
       <div class="wrap">
         <div class="section-head">
-          <h2>Music is the bridge.</h2>
+          <h2>Music that carries ideas.</h2>
           <p>
-            Songs can carry emotion before a listener knows every word. That makes music a natural place to meet another language, another culture, and another point of view.
+            Songs can cross borders before a conversation ever begins. Link OS Publishing&trade; brings together original music, storytelling, emotion, and ideas that are meant to travel.
           </p>
         </div>
-
         <div class="grid3">
           <article class="card">
+            <div class="eyebrow">Original music</div>
+            <h3>Songs with something inside them</h3>
+            <p>Original releases by Sora Shigotaku&trade; explore identity, language, human experience, curiosity, and whatever refuses to fit neatly inside one box.</p>
+          </article>
+          <article class="card">
             <div class="eyebrow">Publishing</div>
-            <h3>Original music</h3>
-            <p>
-              Link OS Publishing&trade; is home to original releases by Sora Shigotaku, with music treated as something to experience, question, repeat, and carry with you.
-            </p>
+            <h3>A home for the work</h3>
+            <p>Link OS Publishing&trade; is the publishing identity behind music, digital releases, creative media, and connected projects.</p>
           </article>
-
           <article class="card">
-            <div class="eyebrow">Language</div>
-            <h3>Words become sound</h3>
-            <p>
-              Pronunciation, rhythm, repetition, phrasing, and melody can turn vocabulary into something memorable instead of something trapped on a worksheet.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="eyebrow">Perspective</div>
-            <h3>More than translation</h3>
-            <p>
-              Learning another language is also learning how another group of people organizes meaning. The goal is not just more words. It is a larger map of the world.
-            </p>
+            <div class="eyebrow">Connection</div>
+            <h3>Same song, different meaning</h3>
+            <p>Music can make unfamiliar words feel familiar. That makes it a natural bridge between listening, culture, memory, and language learning.</p>
           </article>
         </div>
       </div>
@@ -514,106 +384,105 @@
     <section id="languages">
       <div class="wrap">
         <div class="section-head">
-          <h2>A language journey that keeps growing.</h2>
+          <h2>Languages make the world larger.</h2>
           <p>
-            The point is not to pretend every language has been mastered. The point is to keep listening, keep practicing, and keep adding new sounds, meanings, and perspectives.
+            The point is not collecting languages like trophies. It is hearing more, understanding more, and having more ways to meet the world where it already is.
           </p>
         </div>
-
-        <div class="language-wall" aria-label="Languages explored through the project">
-          <span class="language-pill">Espa&ntilde;ol</span>
+        <div class="language-wall" aria-label="Languages">
           <span class="language-pill">English</span>
-          <span class="language-pill">Japanese</span>
+          <span class="language-pill">Espa&ntilde;ol</span>
           <span class="language-pill">Fran&ccedil;ais</span>
           <span class="language-pill">Italiano</span>
           <span class="language-pill">Deutsch</span>
           <span class="language-pill">Portugu&ecirc;s</span>
+          <span class="language-pill">Japanese</span>
           <span class="language-pill">Korean</span>
           <span class="language-pill">Russian</span>
           <span class="language-pill">Mandarin Chinese</span>
           <span class="language-pill">Arabic</span>
-          <span class="language-pill">And more...</span>
+          <span class="language-pill">And growing...</span>
         </div>
       </div>
     </section>
 
-    <section id="method">
+    <section id="learn">
       <div class="wrap">
         <div class="section-head">
           <h2>Listen. Learn. Repeat.</h2>
           <p>
-            The approach is deliberately simple: hear language in something meaningful, understand more each time, and let repetition do what repetition does best.
+            Language learning becomes more human when it is attached to sound, rhythm, memory, emotion, and real curiosity instead of just memorizing isolated words.
           </p>
         </div>
-
         <div class="process">
           <article class="step">
             <div class="icon">&#9835;</div>
-            <h3>Listen first</h3>
-            <p>
-              Hear the sound, emotion, rhythm, and shape of the language before worrying about perfection.
-            </p>
+            <h3>Listen</h3>
+            <p>Hear the sound before trying to tame it. Music and spoken language train the ear to notice rhythm, stress, repetition, and melody.</p>
           </article>
-
           <article class="step">
-            <div class="icon">Aa</div>
-            <h3>Find the meaning</h3>
-            <p>
-              Connect the sound to words, phrases, context, and the feeling behind what is being said.
-            </p>
+            <div class="icon">&#9998;</div>
+            <h3>Learn</h3>
+            <p>Connect sounds to meaning, context, and culture. The goal is not perfect recall. The goal is useful understanding that keeps expanding.</p>
           </article>
-
           <article class="step">
             <div class="icon">&#8635;</div>
-            <h3>Come back again</h3>
-            <p>
-              Songs invite replay. Each return can make a phrase more familiar until it stops feeling foreign and starts feeling usable.
-            </p>
+            <h3>Repeat</h3>
+            <p>Come back to it. Sing it, say it, hear it again, and let familiarity do some of the heavy lifting.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="wrap feature-band">
-        <article class="feature-copy">
-          <h2>Same song. Different language. New meaning.</h2>
+    <section>
+      <div class="wrap split">
+        <div class="panel">
+          <h2>More languages. More perspectives.</h2>
           <p>
-            Link OS Publishing&trade; is not trying to turn language learning into a classroom with a beat taped onto it. The idea is more organic: music already teaches us patterns, memory, pronunciation, repetition, and emotion. Language can live inside that experience.
+            Learning another language is not just swapping one word for another. It exposes different patterns, humor, assumptions, histories, sounds, and ways of organizing thought.
           </p>
-          <div class="quote">More languages. More perspectives. A bigger world.</div>
-        </article>
+          <p>
+            Link OS Publishing&trade; treats language as part of the creative world rather than a separate classroom tucked away somewhere else.
+          </p>
+        </div>
+        <div class="panel">
+          <h2>A brighter way to learn.</h2>
+          <p>
+            Curiosity works better when it stays alive. Music gives repetition a reason to happen, and language gives music another dimension to travel through.
+          </p>
+          <p>
+            Create. Listen. Learn. Share. Repeat.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <article class="founder-card">
-          <div class="founder-top">
-            <img class="avatar" src="avatar.jpg" alt="Sora Shigotaku" />
-            <div class="founder-meta">
-              <strong>Sora Shigotaku</strong>
-              <span>Founder &amp; CEO, Link OS LLC &bull; Artist &amp; Creator</span>
-            </div>
+    <section id="sora">
+      <div class="wrap">
+        <div class="founder">
+          <img class="avatar" src="avatar.jpg" alt="Sora Shigotaku">
+          <div>
+            <div class="eyebrow">Artist &bull; Creator &bull; Founder</div>
+            <h2>Sora Shigotaku&trade;</h2>
+            <p>
+              Sora Shigotaku&trade; creates music and connected creative work through Link OS Publishing&trade;, with language learning becoming part of the same larger project: communication, curiosity, perspective, and making the world feel a little less divided into separate rooms.
+            </p>
           </div>
-          <h2>Built from curiosity.</h2>
-          <p>
-            Link OS Publishing&trade; brings together original music, creative publishing, and an ongoing interest in language, culture, and how people connect through sound.
-          </p>
-          <p>
-            It does not need every idea to fit into a traditional box. It can grow as the music grows, as the language journey grows, and as new projects find their place.
-          </p>
-        </article>
+        </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="wrap">
         <div class="cta">
-          <h2>Hear something. Learn something. Keep going.</h2>
+          <h2>Music can travel farther than words.</h2>
           <p>
-            Follow the music, explore the language project, or reach out about publishing, creative work, collaboration, and future ideas.
+            Follow the music, the language journey, and everything that grows between them.
           </p>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="https://www.youtube.com/@shigotaku?sub_confirmation=1" target="_blank" rel="noopener">YouTube</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/shigotaku/" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn btn-secondary" href="mailto:shigotaku@icloud.com">shigotaku@icloud.com</a>
+            <a class="btn btn-primary" href="https://www.youtube.com/@shigotaku">YouTube</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/shigotaku/">Instagram</a>
+            <a class="btn btn-secondary" href="mailto:shigotaku@icloud.com">Email</a>
           </div>
         </div>
       </div>
@@ -622,8 +491,8 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <div>&copy; 2026 Link OS LLC. Link OS Publishing&trade;.</div>
-      <div>Music &bull; Languages &bull; Creative Publishing</div>
+      <div>&copy; 2026 Link OS Publishing&trade;. All rights reserved.</div>
+      <div>Sora Shigotaku&trade; &bull; Music &bull; Languages &bull; Connection</div>
     </div>
   </footer>
 </body>
