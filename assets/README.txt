@@ -1,1 +1,0 @@
-Site assets are referenced by index.html.
